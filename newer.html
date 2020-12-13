@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Akan-IP</title>
+</head>
+<body>
+    <div class="container">
+    <h1>Akan IP</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Vel voluptates nisi voluptas doloremque nesciunt dolorum assumenda
+         obcaecati similique consequatur omnis beatae aspernatur molestiae 
+         neque, sunt harum adipisci molestias possimus in facere quis. Vel,
+         autem iure quisquam possimus at dolorum ipsam iusto adipisci illo 
+         voluptate laborum blanditiis iste harum, repellat dolores!</p>
+    </div>
+
+
+
+
+    <!-- <form> -->
+            <div class="form-container">
+        <div class="row mb-3">
+          <label for="inputDate" class="col-sm-2 col-form-label">Date</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="date">
+            <p class="bg-danger" id="dateerror"></p>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="InputMonth" class="col-sm-2 col-form-label">Month</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="month">
+            <p class="bg-danger" id="dateerror"></p>
+          </div>
+        </div>
+        <div class="row mb-3">
+            <label for="InputYear" class="col-sm-2 col-form-label">Year</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="year">
+            </div>
+        <fieldset class="row mb-3">
+          <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gridGenders" id="gender1" value="male" >
+              <label class="form-check-label" for="gridRadios">
+                Male
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gridGenders" id="gender2" value="female">
+              <label class="form-check-label" for="gridRadios">
+                Female
+              </label>
+            </div>
+           
+          </div>
+        </fieldset><br>
+        
+
+         <div class="button">
+            <button type="submit" class="btn btn-primary" onclick="Calculate()">Submit</button>
+        </div>
+    </div>
+    <div class="displayName">
+        
+        <h3>Display Name</h3>
+        <p class="bg-success" id="displayName"></p>
+            
+            
+        
+        </div>
+      <!-- </form> -->
+      <script>
+          function Calculate() 
+{
+    if(document.getElementById("date").value<=0 || document.getElementById("date").value>31)
+    {
+        document.getElementById("dateerror").innerHTML = "Enter a valid date!";
+    }
+    else
+    {
+        DD = document.getElementById("date").value;
+        document.getElementById("dateerror").innerHTML = "";
+
+        if(document.getElementById("month").value<1 || document.getElementById("month").value>12)
+        {
+            document.getElementById("montherror").innerHTML = "Enter a valid month!";
+        }
+        else
+        {
+            document.getElementById("montherror").innerHTML = "";
+            document.getElementById("displayAkan").innerHTML = "";
+
+
+            MM = document.getElementById("month").value;
+            year = document.getElementById("year").value;
+
+            if (document.getElementById("gender1").checked) 
+                {
+                    gender = document.getElementById("gender1").value;
+                }
+            if (document.getElementById("gender2").checked) 
+                {
+                    gender = document.getElementById("gender2").value;
+                }
+
+                var digits = year.toString().split('');
+                var singleDigits = year.toString().split('');
+                var firstNumber = singleDigits[0];
+                var secondNumber = singleDigits[1];
+                var thirdNumber = singleDigits[2];
+                var fourthNumber = singleDigits[3];
+
+                var CC = firstNumber.concat(secondNumber);
+                var YY = thirdNumber.concat(fourthNumber);
+
+                d = ( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD ) % 7;
+                
+                
+                d = Math.round(d);
+                if(gender == "male")
+                {
+                    akanNames = ["Kwasi","Kwadwo","Kwabena","Kwaku","Yaw","Kofi","Kwame"];
+                    result = akanNames[d];
+                    document.getElementById("displayAkan").innerHTML = result;
+                }
+                else if(gender == "female")
+                {
+                    akanNames=["Akosua","Adwoa","Abenaa","Akua","Yaa","Afua","Ama"];
+                    result = akanNames[d];
+                    document.getElementById("displayAkan").innerHTML = result;
+                }
+
+        }
+        
+    }
+    
+}
+      </script>
+
+</body>
+</html>

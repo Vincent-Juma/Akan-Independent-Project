@@ -7,7 +7,7 @@
     integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
  <link rel="stylesheet" href="script.js">
     <link rel="stylesheet" type="text/css" href="index.css">
-    <title> Naming System</title>
+    <title>Naming System</title>
 </head>
     <body>
       <div class="collapse" id="navbarToggleExternalContent">
@@ -54,75 +54,126 @@
         </p>
       </div>
           <h3>Enter your birth details here:</h3>
-          <form class="center">
-                    <label for="inputtext" class="col-sm-2 col-form-label">Day</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputPassword3">
-                    <div class="row mb-3">
-                    <label for="inputtext" class="col-sm-2 col-form-label">Month</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputPassword3">
-                    <div class="row mb-3">
-                    <label for="inputtext" class="col-sm-2 col-form-label">Year</label>
-                    <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputPassword3">
-              </div>
-            </form>
-          
-          
-          <h5>Gender:</h5>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-            <label class="form-check-label" for="flexRadioDefault1">
-              Male
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-            <label class="form-check-label" for="flexRadioDefault2">
-              Female
-            </label>
-                <br><br>
-                <button type="submit" class="btn btn-primary">Submit</button>
-          </div><br>
-          <script>var year = "CC"+"YY"
-            var month = "MM"
-            var day = "DD"
-            
-            var dayOfTheWeek = "( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD ) mod 7";
-            
-            if (month < 13) {
-                dayOfTheWeek = "( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD ) mod 7";
-              } else if (day < 32) {
-                dayOfTheWeek = "( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD ) mod 7";
-              } 
-              if (year < 0) {
-                dayOfTheWeek = "( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD ) mod 7";
-              }
-              else {
-                dayOfTheWeek = "Invalid Character";
-              }
-            
-            
-            var Male = ("Sunday: Kwasi", "Monday: Kwadwo", "Tuesday: Kwabena", "Wednesday: Kwaku", 
-                        "Thursday:  Yaw", "Friday: Kofi", "Saturday: Kwame");
-            var Female = ("Sunday: Akosua", "Monday: Adwoa", "Tuesday: Abenaa",
-            "Wednesday: Akua", "Thursday:  Yaa", "Friday: Afua", "Saturday: Ama");
-            </script>
+             
+ <!-- <form> -->
+  <div class="form-container">
+  <div class="row mb-3">
+    <label for="inputDate" class="col-sm-2 col-form-label">Date</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="date">
+      <p class="bg-danger" id="dateerror"></p>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="inputMonth" class="col-sm-2 col-form-label">Month</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="month">
+      <p class="bg-danger" id="montherror"></p>
+    </div>
+  </div>
 
-          <select class="form-select" aria-label="Default select example">
-              <br><br>
-              <h5>Confirm Akan name for feedback</h5>
-            <option selected><h4>Day of the week</h4></option>
-            <option value="1">Monday</option>
-            <option value="2">Tuesday</option>
-            <option value="3">Wednesday</option>
-            <option value="4">Thursday</option>
-            <option value="5">Friday</option>
-            <option value="6">Saturday</option>
-            <option value="7">Sunday</option>
-      </select>
+  <div class="row mb-3">
+    <label for="inputYear" class="col-sm-2 col-form-label">Year</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="year">
+    </div>
+  </div>
 
+  <fieldset class="row mb-3">
+    <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+    <div class="col-sm-10">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="gridGenders" id="gender1" value="male">
+        <label class="form-check-label" for="gridRadios1">
+         Male
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="gridGenders" id="gender2" value="female">
+        <label class="form-check-label" for="gridRadios2">
+         Female
+        </label>
+      </div>
+      </div>
+      </fieldset>
+  <div class="button">
+      <button type="submit" class="btn btn-primary" onclick="Calculate()">Submit</button>
+  </div>
+  <div class="displayAkan">
+   <h4>Akan Name:</h4>
+   <p class="bg-success" id="displayAkan"></p>
+</div>
+</div>
+<!-- </form> -->
+
+<script>
+
+function Calculate() 
+{
+    if(document.getElementById("date").value<=0 || document.getElementById("date").value>31)
+    {
+        document.getElementById("dateerror").innerHTML = "Enter a valid date!";
+    }
+    else
+    {
+        DD = document.getElementById("date").value;
+        document.getElementById("dateerror").innerHTML = "";
+
+        if(document.getElementById("month").value<1 || document.getElementById("month").value>12)
+        {
+            document.getElementById("montherror").innerHTML = "Enter a valid month!";
+        }
+        else
+        {
+            document.getElementById("montherror").innerHTML = "";
+            document.getElementById("displayAkan").innerHTML = "";
+
+
+            MM = document.getElementById("month").value;
+            year = document.getElementById("year").value;
+
+            if (document.getElementById("gender1").checked) 
+                {
+                    gender = document.getElementById("gender1").value;
+                }
+            if (document.getElementById("gender2").checked) 
+                {
+                    gender = document.getElementById("gender2").value;
+                }
+
+                var digits = year.toString().split('');
+                var singleDigits = year.toString().split('');
+                var firstNumber = singleDigits[0];
+                var secondNumber = singleDigits[1];
+                var thirdNumber = singleDigits[2];
+                var fourthNumber = singleDigits[3];
+
+                var CC = firstNumber.concat(secondNumber);
+                var YY = thirdNumber.concat(fourthNumber);
+
+                d = ( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD ) % 7;
+                
+                
+                d = Math.round(d);
+                if(gender == "male")
+                {
+                    akanNames = ["Kwasi","Kwadwo","Kwabena","Kwaku","Yaw","Kofi","Kwame"];
+                    result = akanNames[d];
+                    document.getElementById("displayAkan").innerHTML = result;
+                }
+                else if(gender == "female")
+                {
+                    akanNames=["Akosua","Adwoa","Abenaa","Akua","Yaa","Afua","Ama"];
+                    result = akanNames[d];
+                    document.getElementById("displayAkan").innerHTML = result;
+                }
+
+        }
+        
+    }
+    
+}
+</script>
     
 </body>
 </html>
