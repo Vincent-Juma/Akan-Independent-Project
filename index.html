@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" 
+    integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+ <link rel="stylesheet" href="script.js">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <title> Naming System</title>
+</head>
+    <body>
+      <div class="collapse" id="navbarToggleExternalContent">
+        
+        <nav class="navbar navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Default</a>
+          </div>
+        </nav>
+        <div class="bg-dark p-4">
+          <h5 class="text-white h4">Collapsed content</h5>
+          <span class="text-muted">Toggleable via the navbar brand.</span>
+        </div>
+      </div>
+      <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav> 
+          <div class="about">
+    <h1><em>The Akan Naming System</em></h1>
+    <p> Akan people are believed to have migrated to their current location from the Sahara desert 
+        and Sahel regions of Africa into the forest region around the 11th century, and many Akans tell 
+        their history as it started in the eastern region of Africa as this is where the ethnogenesis 
+        of the Akan as we know them today happened.
+        The Akan people of Ghana frequently name their children after the day of the week they were born and the order
+        in which they were born
+        During the 18th–19th centuries, enslaved people in the Caribbean from the region that is modern-day 
+        Ghana were referred to as Coromantees.
+        
+        This naming after the days of the week has a much deeper meaning, because the day on which a person was born
+        has about the similar significance as in the western hemisphere the assignment to a sign of the zodiac.So,
+        what if several siblings are born on the same day of the week? Not a problem,
+        then simply numerical or sequential words are integrated into the name:
+        </p>
+      </div>
+          <h3>Enter your birth details here:</h3>
+          <form class="center">
+                    <label for="inputtext" class="col-sm-2 col-form-label">Day</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputPassword3">
+                    <div class="row mb-3">
+                    <label for="inputtext" class="col-sm-2 col-form-label">Month</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputPassword3">
+                    <div class="row mb-3">
+                    <label for="inputtext" class="col-sm-2 col-form-label">Year</label>
+                    <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputPassword3">
+              </div>
+            </form>
+          
+          
+          <h5>Gender:</h5>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Male
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Female
+            </label>
+                <br><br>
+                <button type="submit" class="btn btn-primary">Submit</button>
+          </div><br>
+          <script>var year = "CC"+"YY"
+            var month = "MM"
+            var day = "DD"
+            
+            var dayOfTheWeek = "( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD ) mod 7";
+            
+            if (month < 13) {
+                dayOfTheWeek = "( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD ) mod 7";
+              } else if (day < 32) {
+                dayOfTheWeek = "( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD ) mod 7";
+              } 
+              if (year < 0) {
+                dayOfTheWeek = "( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD ) mod 7";
+              }
+              else {
+                dayOfTheWeek = "Invalid Character";
+              }
+            
+            
+            var Male = ("Sunday: Kwasi", "Monday: Kwadwo", "Tuesday: Kwabena", "Wednesday: Kwaku", 
+                        "Thursday:  Yaw", "Friday: Kofi", "Saturday: Kwame");
+            var Female = ("Sunday: Akosua", "Monday: Adwoa", "Tuesday: Abenaa",
+            "Wednesday: Akua", "Thursday:  Yaa", "Friday: Afua", "Saturday: Ama");
+            
+            
+            
+            </script>
+
+          <select class="form-select" aria-label="Default select example">
+              <br><br>
+              <h5>Confirm Akan name for feedback</h5>
+            <option selected><h4>Day of the week</h4></option>
+            <option value="1">Monday</option>
+            <option value="2">Tuesday</option>
+            <option value="3">Wednesday</option>
+            <option value="4">Thursday</option>
+            <option value="5">Friday</option>
+            <option value="6">Saturday</option>
+            <option value="7">Sunday</option>
+      </select>
+
+    
+</body>
+</html>

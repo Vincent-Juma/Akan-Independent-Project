@@ -1,0 +1,28 @@
+body {
+    padding: 15px;
+    margin: 5px;
+    background: url("./back.jpg") no-repeat;
+    border: 5px 5px 10px solid crimson;
+}
+.center {
+    float: left;
+    display: flex;
+    content: initial;
+    text-align: left;
+    align-content: start;
+    font-size: x-large;
+    font-weight: bolder;
+}
+h1 {
+    color: blueviolet;
+    font: outline;
+}
+h3 {
+    color: rgb(255, 255, 0);
+    float: right;
+}
+.about {
+    height: 250px;
+    background-color: cadetblue;
+    font-style: italic;
+}
