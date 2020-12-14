@@ -3,11 +3,15 @@
     background-color: saddlebrown;
 }
 .form-container {
-    width: 50%;
+    width: 40%;
     margin: auto;
     padding: 15px;
     border: 2px;
     border-radius: 5px;
+    float: left;
+}
+img {
+    float: right;
 }
 body {
     font-weight: bold;
