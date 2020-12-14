@@ -1,8 +1,10 @@
 body {
-    padding: 15px;
+    padding: 50px;
     margin: 5px;
     background: url("./back.jpg") no-repeat;
-    border: 5px 5px 10px solid crimson;
+    border: 5px 5px 50px solid crimson;
+    margin: 160px;
+    border-radius: 40%;
 }
 .center {
     float: left;
@@ -24,4 +26,33 @@ h3 {
     height: 250px;
     background-color: cadetblue;
     font-style: italic;
+}
+.container {
+    text-align: center;
+    background-color: saddlebrown;
+    padding: 50px;
+}
+.form-container {
+    width: 40%;
+    margin: auto;
+    padding: 15px;
+    border: 2px;
+    border-radius: 5px;
+    float: left;
+}
+img {
+    float: right;
+}
+body {
+    font-weight: bold;
+    padding-top: 0px;
+    margin-top: 0px;
+    height: 1260px;
+}
+h4 {
+    font-weight: bolder;
+    font-size: xx-large;
+}
+footer {
+    height: 200px;
 }
