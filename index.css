@@ -1,8 +1,10 @@
 body {
-    padding: 15px;
+    padding: 50px;
     margin: 5px;
     background: url("./back.jpg") no-repeat;
-    border: 5px 5px 10px solid crimson;
+    border: 5px 5px 50px solid crimson;
+    margin: 160px;
+    border-radius: 40%;
 }
 .center {
     float: left;
